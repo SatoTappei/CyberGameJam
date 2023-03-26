@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 186795818275465519}
   - component: {fileID: 818245208644423772}
   - component: {fileID: 8192926387808013585}
-  - component: {fileID: 4638683343931504181}
+  - component: {fileID: 3034112066365846852}
   m_Layer: 0
   m_Name: Weapon_Abema
   m_TagString: Untagged
@@ -135,7 +135,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4638683343931504181
+--- !u!114 &3034112066365846852
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,11 +144,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 186795818275465512}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30ec28e40191d884db2e0f2d8d6e0327, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b240186ba82b9d42abf747873c32991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rb: {fileID: 8192926387808013585}
-  _speed: 3
+  _speed: 10
 --- !u!1 &186795819051317502
 GameObject:
   m_ObjectHideFlags: 0
