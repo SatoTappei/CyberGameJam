@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,21 +7,6 @@ public class ActorBehavior : MonoBehaviour
     [SerializeField] GameObject _defeatedParitcle;
     [Header("押し負けてBorderEffectと接触した時に呼ばれる")]
     [SerializeField] UnityEvent _onBorderEffectHit;
-    //[Header("キャラクターの画像")]
-    //[SerializeField] Transform _sprite;
-    //[Header("プレイヤー2として扱う")]
-    //[SerializeField] bool _usePlayer2;
-
-    // 管理する側がアニメーション再生
-    // アニメーション再生後に
-
-    void Awake()
-    {
-        //if (_sprite != null && _usePlayer2)
-        //{
-        //    _sprite.localScale = new Vector3(-1, 1, 1);
-        //}
-    }
 
     void OnDisable()
     {
