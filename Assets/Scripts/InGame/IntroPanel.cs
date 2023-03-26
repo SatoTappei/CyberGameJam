@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class IntroPanel : MonoBehaviour
 {
-    [SerializeField, Tooltip("表示させるパネル")] GameObject _panel;
+    [SerializeField, Tooltip("表示させるパネル")] UnityEngine.GameObject _panel;
     [SerializeField, Tooltip("カウントダウンのテキスト")] Text _countDownText;
 
     [SerializeField, Tooltip("カウントダウン秒数")] float _count;
