@@ -11,8 +11,11 @@ public class GameManager : MonoBehaviour
     [Tooltip("プレイヤー1のキャラ情報")] int _playerOneCharacter;
     [Tooltip("プレイヤー2のキャラ情報")] int _playerTwoCharacter;
 
+    [Tooltip("ゲームが開始されているかどうかのフラグ")] bool _isGameStart = false;
+
     public int PlayerOneCharacter { get => _playerOneCharacter; set => _playerOneCharacter = value; }
     public int PlayerTwoCharacter { get => _playerTwoCharacter; set => _playerTwoCharacter = value; }
+    public bool IsGameStart { get => _isGameStart; set => _isGameStart = value; }
 
     private void Awake()
     {
@@ -25,5 +28,29 @@ public class GameManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
+    }
+
+    public void ChangePlayerOneCharacter(int id)
+    {
+        _playerOneCharacter = id;
+    }
+
+    public void ChangePlayerTwoCharacter(int id)
+    {
+        _playerTwoCharacter = id;
+    }
+
+    public void ToggleGame()
+    {
+        if (_isGameStart)
+        {
+            _isGameStart = false;
+        }
+        else
+        {
+            _isGameStart = true;
+        }
+
+        Debug.Log($"ToggleGame関数が呼ばれました 現在のIsGameStartは {_isGameStart}");
     }
 }

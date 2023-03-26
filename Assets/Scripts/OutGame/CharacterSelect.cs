@@ -94,7 +94,7 @@ public class CharacterSelect : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    GameManager.Instance.PlayerOneCharacter = _currentSelectedCharacter;
+                    GameManager.Instance.ChangePlayerOneCharacter(_currentSelectedCharacter);
                     Debug.Log($"プレイヤー1 : {GameManager.Instance.PlayerOneCharacter}");
                     _currentPlayer++;
                 }
@@ -122,7 +122,7 @@ public class CharacterSelect : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    GameManager.Instance.PlayerTwoCharacter = _currentSelectedCharacter;
+                    GameManager.Instance.ChangePlayerTwoCharacter(_currentSelectedCharacter);
                     Debug.Log($"プレイヤー2 : {GameManager.Instance.PlayerTwoCharacter}");
                     _currentPlayer++;
                 }
