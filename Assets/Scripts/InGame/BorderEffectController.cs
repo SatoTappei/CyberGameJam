@@ -1,21 +1,22 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 /// <summary>
 /// プレイヤーの入力を受け取ってBorderEffectオブジェクト動かす
 /// このスクリプトをアクティブにすることで動く
 /// </summary>
-public class Logic : MonoBehaviour
+public class BorderEffectController : MonoBehaviour
 {
     [SerializeField] PlayerInput _p1Controller;
     [SerializeField] PlayerInput _p2Controller;
-    [Header("中心の画像")]
+    [Header("バチバチのオブジェクト")]
     [SerializeField] Transform _bachibachi;
+    [Header("加速量")]
+    [SerializeField] float _acceleration = 0.5f;
 
     // 時間経過で押すキーが変わる
     // 0~3
     int _correctKeyIndex;
-    float _centerPosAcceleration;
+    float _currentAcceleration;
 
     void Awake()
     {
@@ -41,14 +42,14 @@ public class Logic : MonoBehaviour
 
         if (p1Correct)
         {
-            _centerPosAcceleration += 0.5f * Time.deltaTime;
+            _currentAcceleration += _acceleration * Time.deltaTime;
         }
         if (p2Correct)
         {
-            _centerPosAcceleration -= 0.5f * Time.deltaTime;
+            _currentAcceleration -= _acceleration * Time.deltaTime;
         }
 
-        _bachibachi.Translate(new Vector2(_centerPosAcceleration, 0));
+        _bachibachi.Translate(new Vector2(_currentAcceleration, 0));
     }
 
     void ChangeCorrectKey() => _correctKeyIndex = Random.Range(0, 4);
