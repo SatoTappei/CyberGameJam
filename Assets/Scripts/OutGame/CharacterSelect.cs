@@ -13,8 +13,12 @@ public class CharacterSelect : MonoBehaviour
 
     [SerializeField, Tooltip("現在操作できるプレイヤーを表示するText")] Text _currentText;
     [SerializeField, Tooltip("操作説明のテキスト")] Text _instructionText;
+    [SerializeField, Tooltip("選択中のキャラを表示させるImage")] Sprite[] _characterImage;
 
-    [SerializeField, Tooltip("シーン遷移の際のシーン名")] string _nextSceneName; 
+    [SerializeField, Tooltip("プレイヤーのキャラ表示")] Image[] _playerImage;
+    [SerializeField, Tooltip("プレイヤーのキャラ名表示")] Text[] _playerText;
+
+    [SerializeField, Tooltip("シーン遷移の際のシーン名")] string _nextSceneName;
 
     [Tooltip("現在選択されているキャラクター番号")] int _currentSelectedCharacter = 0;
     [Tooltip("現在操作できるプレイヤー")] int _currentPlayer = 1;
@@ -49,13 +53,13 @@ public class CharacterSelect : MonoBehaviour
         switch (_currentPlayer)
         {
             case 1:
-                _currentText.text = $"プレイヤー{_currentPlayer}はキャラクターを選択してください";
-                _instructionText.text = $"←：Aキー　→：Dキー　決定：Spaceキー";
+                //_currentText.text = $"プレイヤー{_currentPlayer}はキャラクターを選択してください";
+                //_instructionText.text = $"←：Aキー　→：Dキー　決定：Spaceキー";
                 SelectCharacter();
                 break;
             case 2:
-                _currentText.text = $"プレイヤー{_currentPlayer}はキャラクターを選択してください";
-                _instructionText.text = $"←：←キー　→：→キー　決定：Spaceキー";
+                //_currentText.text = $"プレイヤー{_currentPlayer}はキャラクターを選択してください";
+                //_instructionText.text = $"←：←キー　→：→キー　決定：Spaceキー";
                 SelectCharacter();
                 break;
             case 3:
@@ -85,7 +89,7 @@ public class CharacterSelect : MonoBehaviour
                 else if (Input.GetKeyDown(KeyCode.A))
                 {
                     _currentSelectedCharacter--;
-                    if(0 > _currentSelectedCharacter)
+                    if (0 > _currentSelectedCharacter)
                     {
                         _currentSelectedCharacter = _characters.Length - 1;
                     }
@@ -104,6 +108,10 @@ public class CharacterSelect : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.RightArrow))
                 {
                     _currentSelectedCharacter++;
+                    if(GameManager.Instance.PlayerOneCharacter == _currentSelectedCharacter)
+                    {
+                        _currentSelectedCharacter++;
+                    }
                     if (_characters.Length - 1 < _currentSelectedCharacter)
                     {
                         _currentSelectedCharacter = 0;
@@ -113,6 +121,10 @@ public class CharacterSelect : MonoBehaviour
                 else if (Input.GetKeyDown(KeyCode.LeftArrow))
                 {
                     _currentSelectedCharacter--;
+                    if (GameManager.Instance.PlayerOneCharacter == _currentSelectedCharacter)
+                    {
+                        _currentSelectedCharacter--;
+                    }
                     if (0 > _currentSelectedCharacter)
                     {
                         _currentSelectedCharacter = _characters.Length - 1;
@@ -131,20 +143,43 @@ public class CharacterSelect : MonoBehaviour
     }
 
     /// <summary>
-    /// 選択していないキャラ画像の色を変える
+    /// 選択中のキャラ表示
     /// </summary>
     void ChangeColor()
     {
-        foreach(var character in _characters)
+        switch (_currentPlayer)
         {
-            if(character != _characters[_currentSelectedCharacter])
-            {
-                character.color = Color.black;
-            }
-            else
-            {
-                character.color = Color.white;
-            }
+            case 1:
+                foreach (var character in _characters)
+                {
+                    if (character != _characters[_currentSelectedCharacter])
+                    {
+                        character.color = Color.black;
+                    }
+                    else
+                    {
+                        character.color = Color.white;
+                        _playerImage[0].sprite = _characterImage[_currentSelectedCharacter];
+                        _playerText[0].text = character.name;
+                    }
+                }
+                break;
+            case 2:
+                foreach (var character in _characters)
+                {
+                    if (character != _characters[_currentSelectedCharacter])
+                    {
+                        character.color = Color.black;
+                    }
+                    else
+                    {
+                        character.color = Color.white;
+                        _playerImage[1].sprite = _characterImage[_currentSelectedCharacter];
+                        _playerText[1].text = character.name;
+                    }
+                }
+                break;
         }
+
     }
 }
