@@ -11,6 +11,8 @@ public class WeaponGenerator : MonoBehaviour
     [SerializeField] Vector3 _offset;
     [Header("ê∂ê¨Ç∑ÇÈä‘äu")]
     [SerializeField] float _interval;
+    [Header("ê∂ê¨ï®ÇîΩì]Ç≥ÇπÇÈ")]
+    [SerializeField] bool _isInstanceFlip;
     
     Transform _transform;
 
@@ -37,6 +39,6 @@ public class WeaponGenerator : MonoBehaviour
         pos.z += _offset.z;
 
         LinearMovement behavior = Instantiate(_prefab, pos, Quaternion.identity, _transform);
-        behavior.Init(Vector3.left);
+        behavior.Init(_isInstanceFlip ? Vector3.right : Vector3.left);
     }
 }
