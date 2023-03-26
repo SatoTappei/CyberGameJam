@@ -8,9 +8,6 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class SceneLoader : MonoBehaviour
 {
-
-
-
     /// <summary>
     /// 名前を指定してシーンをロードする
     /// </summary>
