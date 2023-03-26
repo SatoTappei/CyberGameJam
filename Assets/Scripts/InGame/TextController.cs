@@ -21,10 +21,16 @@ public class TextController : MonoBehaviour
     /// </summary>
     IEnumerator TextInterval(string comment)
     {
-        foreach(char commentText in comment)
+        _text.text = "";
+        foreach (char commentText in comment)
         {
             _text.text = _text.text + commentText;
             yield return new WaitForSeconds(0.1f);
         }
+    }
+
+    public void RemoveText()
+    {
+        _text.text = "";
     }
 }
