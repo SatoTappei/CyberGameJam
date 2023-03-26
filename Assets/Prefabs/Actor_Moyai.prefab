@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7745137170683155433}
-  - component: {fileID: 7745137170683155432}
   - component: {fileID: 7789446333614844096}
+  - component: {fileID: 7745137170683155432}
+  - component: {fileID: 1488603170129977448}
   m_Layer: 0
   m_Name: Actor_Moyai
   m_TagString: Untagged
@@ -34,6 +35,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &7789446333614844096
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7745137170683155435}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.6085291, y: -0.23404956}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 3.4341154}
+  m_EdgeRadius: 0
 --- !u!114 &7745137170683155432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50,32 +77,22 @@ MonoBehaviour:
   _onBorderEffectHit:
     m_PersistentCalls:
       m_Calls: []
---- !u!61 &7789446333614844096
-BoxCollider2D:
+--- !u!114 &1488603170129977448
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7745137170683155435}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94e2ca05ca58dbf4baca955adf13716c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 654705921879475278, guid: 0c7f32494e57a6b44984f0a0acc288ec, type: 3}
+  _offset: {x: 0, y: 0, z: 0}
+  _interval: 0.15
+  _usedPlayer2: 1
 --- !u!1 &7745137172021447010
 GameObject:
   m_ObjectHideFlags: 0
