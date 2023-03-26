@@ -16,7 +16,9 @@ public class CharacterSelect : MonoBehaviour
     [SerializeField, Tooltip("選択中のキャラを表示させるImage")] Sprite[] _characterImage;
 
     [SerializeField, Tooltip("プレイヤーのキャラ表示")] Image[] _playerImage;
-    [SerializeField, Tooltip("プレイヤーのキャラ名表示")] Text[] _playerText;
+    [SerializeField, Tooltip("プレイヤーのキャラ名表示")] Image[] _playerCharaTextImg;
+    [SerializeField, Tooltip("キャラ名のSprite")] Sprite[] _characterNameSprite;
+
 
     [SerializeField, Tooltip("シーン遷移の際のシーン名")] string _nextSceneName;
 
@@ -160,7 +162,7 @@ public class CharacterSelect : MonoBehaviour
                     {
                         character.color = Color.white;
                         _playerImage[0].sprite = _characterImage[_currentSelectedCharacter];
-                        _playerText[0].text = character.name;
+                        _playerCharaTextImg[0].sprite = _characterNameSprite[_currentSelectedCharacter];
                     }
                 }
                 break;
@@ -175,7 +177,7 @@ public class CharacterSelect : MonoBehaviour
                     {
                         character.color = Color.white;
                         _playerImage[1].sprite = _characterImage[_currentSelectedCharacter];
-                        _playerText[1].text = character.name;
+                        _playerCharaTextImg[1].sprite = _characterNameSprite[_currentSelectedCharacter + 4];
                     }
                 }
                 break;
