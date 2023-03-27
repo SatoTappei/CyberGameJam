@@ -50,10 +50,10 @@ public class ActorPrefabHolder : MonoBehaviour
         {
             switch (actorId)
             {
-                case 1: return Instantiate(_dic[PrefabType.HachikoPlayer1]);
-                case 2: return Instantiate(_dic[PrefabType.Building109Player1]);
-                case 3: return Instantiate(_dic[PrefabType.MoyaiPlayer1]);
-                case 4: return Instantiate(_dic[PrefabType.AbemaPlayer1]);
+                case 0: return Instantiate(_dic[PrefabType.HachikoPlayer1]);
+                case 1: return Instantiate(_dic[PrefabType.Building109Player1]);
+                case 2: return Instantiate(_dic[PrefabType.MoyaiPlayer1]);
+                case 3: return Instantiate(_dic[PrefabType.AbemaPlayer1]);
                 default: return null;
             }
         }
@@ -61,10 +61,10 @@ public class ActorPrefabHolder : MonoBehaviour
         {
             switch (actorId)
             {
-                case 1: return Instantiate(_dic[PrefabType.HachikoPlayer2]);
-                case 2: return Instantiate(_dic[PrefabType.Building109Player2]);
-                case 3: return Instantiate(_dic[PrefabType.MoyaiPlayer2]);
-                case 4: return Instantiate(_dic[PrefabType.AbemaPlayer2]);
+                case 0: return Instantiate(_dic[PrefabType.HachikoPlayer2]);
+                case 1: return Instantiate(_dic[PrefabType.Building109Player2]);
+                case 2: return Instantiate(_dic[PrefabType.MoyaiPlayer2]);
+                case 3: return Instantiate(_dic[PrefabType.AbemaPlayer2]);
                 default: return null;
             }
         }
