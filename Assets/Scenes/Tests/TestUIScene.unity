@@ -5407,6 +5407,10 @@ PrefabInstance:
       value: CommentCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 3995618856354989165, guid: 881c735a2c6979846a1b34ac56f6a847, type: 3}
+      propertyPath: _introPanel
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3995618856354989165, guid: 881c735a2c6979846a1b34ac56f6a847, type: 3}
       propertyPath: _effectTransform
       value: 
       objectReference: {fileID: 406628030}
