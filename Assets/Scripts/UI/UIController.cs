@@ -101,11 +101,11 @@ public class UIController : MonoBehaviour
 
             if(comment <= 3)
             {
-                TextActive(SelectPlayer(_gameManager.PlayerOneCharacter) + _comments[comment]);
+                TextActive(SelectPlayer(_gameManager.PlayerOne) + _comments[comment]);
             }
             else
             {
-                TextActive(SelectPlayer(_gameManager.PlayerTwoCharacter) + _comments[comment]);
+                TextActive(SelectPlayer(_gameManager.PlayerTwo) + _comments[comment]);
             }
             
         }
@@ -117,11 +117,11 @@ public class UIController : MonoBehaviour
 
             if (comment <= 3)
             {
-                TextActive(SelectPlayer(_gameManager.PlayerTwoCharacter) + _comments[comment]);
+                TextActive(SelectPlayer(_gameManager.PlayerTwo) + _comments[comment]);
             }
             else
             {
-                TextActive(SelectPlayer(_gameManager.PlayerOneCharacter) + _comments[comment]);
+                TextActive(SelectPlayer(_gameManager.PlayerOne) + _comments[comment]);
             }
         }
     }
