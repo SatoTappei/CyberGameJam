@@ -10,6 +10,8 @@ public class IntroPanel : MonoBehaviour
 
     [SerializeField, Tooltip("カウントダウン秒数")] float _count;
 
+    public float Count => _count;
+
     private void Update()
     {
         _count -= Time.deltaTime;
