@@ -16,6 +16,12 @@ public class UIController : MonoBehaviour
     [SerializeField, Tooltip("テキストをアクティブにする時間(仮)")]
     private float _textTime = 10f;
 
+    [SerializeField]
+    private string[] _comments;
+
+    [SerializeField]
+    private float _h;
+
     private float _timer;
 
     private bool _isTime = false;
@@ -33,7 +39,7 @@ public class UIController : MonoBehaviour
         if (_timer >= _textTime && !_isTime)
         {
             _isTime = true;
-            TextActive("二人とも頑張って!!!");
+            TextActive(_comments[0]);
         }
 
         EffectDistance();
@@ -55,14 +61,14 @@ public class UIController : MonoBehaviour
         // UIをアニメーションさせながらアクティブにする
         _isTween = true;
         _textObject.SetActive(true);
-        _textObject.transform.DOMoveY(90, 0.5f);
-        _textObject.transform.DOScale(new Vector2(1, 1), 0.5f)
+        _textObject.transform.DOMoveY(_h, 0.5f);
+        _textObject.transform.DOScale(Vector3.one, 0.5f)
             .OnComplete(() => _textController.UICommentText(comment));
 
         yield return new WaitForSeconds(5f);
 
         // UIをアニメーションさせながら非アクティブにする
-        _textObject.transform.DOMoveY(-90, 0.5f)
+        _textObject.transform.DOMoveY(-6, 0.5f)
     　　　　.OnComplete(() => _textObject.transform.DOScale(new Vector2(0.8f, 0.8f), 0.5f)
     　　　　.OnComplete(() =>
     　　　　{
@@ -79,14 +85,14 @@ public class UIController : MonoBehaviour
     {
         if (_effectTransform.position.x >= 3 && !_isTween && !_isRight)
         {
-            TextActive("左のランドマークが優勢です!!!");
+            TextActive(_comments[1]);
             _isTween = true;
             _isRight = true;
             _isLeft = false;
         }
         else if (_effectTransform.position.x <= -3 && !_isTween && !_isLeft)
         {
-            TextActive("右のランドマークが優勢です!!!");
+            TextActive(_comments[2]);
             _isTween = true;
             _isLeft = true;
             _isRight = false;

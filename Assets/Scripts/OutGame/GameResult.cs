@@ -32,6 +32,6 @@ public class GameResult : MonoBehaviour
     {
         _canvasGroup.alpha = 1f;
         _canvasGroup.blocksRaycasts = true;
-        _image.DOFade(endValue, duration);
+        _image[0].DOFade(endValue, duration);
     }
 }
