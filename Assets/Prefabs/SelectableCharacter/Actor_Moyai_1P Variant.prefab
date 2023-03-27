@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: _isWeaaponFlip
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7745137170683155432, guid: ee9e76ec87714d34eb2d70a429f1a463, type: 3}
+      propertyPath: _playerNum
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7745137170683155433, guid: ee9e76ec87714d34eb2d70a429f1a463, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -57,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7745137170683155435, guid: ee9e76ec87714d34eb2d70a429f1a463, type: 3}
       propertyPath: m_Name
-      value: Actor_Moyai_1P
+      value: Actor_Moyai_1P Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7745137172021447009, guid: ee9e76ec87714d34eb2d70a429f1a463, type: 3}
       propertyPath: m_LocalScale.x

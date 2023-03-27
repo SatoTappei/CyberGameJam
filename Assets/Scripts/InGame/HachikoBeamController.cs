@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class HachikoBeamController : MonoBehaviour
+public class HachikoBeamController : MonoBehaviour, IWeaponControl
 {
     [Header("ビームをマスクするオブジェクト")]
     [SerializeField] Transform _mask;
@@ -23,5 +23,11 @@ public class HachikoBeamController : MonoBehaviour
         Vector3 borderEffectPos = _borderEffect.position;
         borderEffectPos.x += _offsetX * dir;
         _mask.position = borderEffectPos;
+    }
+
+    void IWeaponControl.Inactive()
+    {
+        _mask.GetComponent<SpriteMask>().enabled = false;
+        Debug.Log("はちこ");
     }
 }

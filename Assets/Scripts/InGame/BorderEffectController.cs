@@ -9,10 +9,10 @@ public class BorderEffectController : MonoBehaviour
     [SerializeField] PlayerInput _p1Controller;
     [SerializeField] PlayerInput _p2Controller;
     [Header("バチバチのオブジェクト")]
-    [SerializeField] Transform _bachibachi;
+    [SerializeField] Transform _borderEffect;
     [Header("加速量")]
     [SerializeField] float _acceleration = 0.5f;
-
+    
     // 時間経過で押すキーが変わる
     // 0~3
     int _correctKeyIndex;
@@ -30,7 +30,7 @@ public class BorderEffectController : MonoBehaviour
 
     void OnDisable()
     {
-        //CancelInvoke(nameof(ChangeCorrectKey));
+        CancelInvoke(nameof(ChangeCorrectKey));
     }
 
     void Update()
@@ -49,7 +49,13 @@ public class BorderEffectController : MonoBehaviour
             _currentAcceleration -= _acceleration * Time.deltaTime;
         }
 
-        _bachibachi.Translate(new Vector2(_currentAcceleration, 0));
+        _borderEffect.Translate(new Vector2(_currentAcceleration, 0));
+    }
+
+    public void InvalidBorderEffect()
+    {
+        enabled = false;
+        _borderEffect.localScale = Vector3.zero;
     }
 
     void ChangeCorrectKey() => _correctKeyIndex = Random.Range(0, 4);
