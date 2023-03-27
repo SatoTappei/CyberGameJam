@@ -818,6 +818,10 @@ MonoBehaviour:
   - {fileID: 936418707}
   _currentText: {fileID: 1663755154}
   _instructionText: {fileID: 180822629}
+  _characterImage: []
+  _playerImage: []
+  _playerCharaTextImg: []
+  _characterNameSprite: []
   _nextSceneName: LoadSceneTest
 --- !u!114 &1150351628
 MonoBehaviour:

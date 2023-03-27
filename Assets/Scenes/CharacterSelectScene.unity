@@ -581,6 +581,110 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &504040652
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 504040653}
+  - component: {fileID: 504040657}
+  - component: {fileID: 504040656}
+  - component: {fileID: 504040655}
+  - component: {fileID: 504040654}
+  m_Layer: 5
+  m_Name: FadeInOutPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &504040653
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504040652}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1183744835}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &504040654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504040652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24f2d3ee9201b444482906c452af154a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _image: {fileID: 504040656}
+  _loadSceneName: 
+--- !u!225 &504040655
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504040652}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &504040656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504040652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &504040657
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504040652}
+  m_CullTransparentMesh: 1
 --- !u!1 &751653800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1209,6 +1313,7 @@ RectTransform:
   - {fileID: 414146841}
   - {fileID: 751653801}
   - {fileID: 247511582}
+  - {fileID: 504040653}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1278,13 +1383,13 @@ MonoBehaviour:
   - {fileID: 1488777116}
   - {fileID: 1443971194}
   _characterNameSprite:
-  - {fileID: 21300000, guid: 5d0357972d194324d9bb696cb30f0e9f, type: 3}
-  - {fileID: 21300000, guid: efed5cc86d8f421459e8c40e98559221, type: 3}
-  - {fileID: 21300000, guid: a294d96891a86fe4389d328f46c93143, type: 3}
+  - {fileID: 21300000, guid: 93a1aca533c4c54408290565b027832d, type: 3}
+  - {fileID: 21300000, guid: 7a850d97cf8437444a8103f6c5082125, type: 3}
+  - {fileID: 21300000, guid: caf40b498b3949d41b4dc413d7ce7faa, type: 3}
   - {fileID: 21300000, guid: b7c5dbe27b4edd9429a8fc650476cd54, type: 3}
-  - {fileID: 21300000, guid: d2bc22b07bbc7c84186981ddd87c4569, type: 3}
-  - {fileID: 21300000, guid: a94ea99c280b7f640b1ac00092411a3b, type: 3}
-  - {fileID: 21300000, guid: 1b2dc2da056bfa0478bb7073dc788d85, type: 3}
+  - {fileID: 21300000, guid: 4d0fa97b78b939741be73311dd5f4a4d, type: 3}
+  - {fileID: 21300000, guid: f37091107020833429d796e0e4a78c4e, type: 3}
+  - {fileID: 21300000, guid: 9a4e467a9a415ed419489102dcde9eaf, type: 3}
   - {fileID: 21300000, guid: 788f54286acada54798c3a83477584b0, type: 3}
   _nextSceneName: 
 --- !u!4 &1296713327
