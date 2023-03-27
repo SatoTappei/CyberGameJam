@@ -19,13 +19,12 @@ public class CharacterSelect : MonoBehaviour
     [SerializeField, Tooltip("プレイヤーのキャラ名表示")] Image[] _playerCharaTextImg;
     [SerializeField, Tooltip("キャラ名のSprite")] Sprite[] _characterNameSprite;
 
-
-    [SerializeField, Tooltip("シーン遷移の際のシーン名")] string _nextSceneName;
+    [SerializeField, Tooltip("遷移するシーン名")] string _nextSceneName;
 
     [Tooltip("現在選択されているキャラクター番号")] int _currentSelectedCharacter = 0;
     [Tooltip("現在操作できるプレイヤー")] int _currentPlayer = 1;
 
-    SceneLoader _sceneLoader;
+    FadeInOut _fadeInOut;
 
     private void Start()
     {
@@ -37,7 +36,7 @@ public class CharacterSelect : MonoBehaviour
         _currentSelectedCharacter = 0;
         Debug.Log(_currentSelectedCharacter);
 
-        _sceneLoader = GetComponent<SceneLoader>();
+        _fadeInOut = GetComponent<FadeInOut>();
     }
 
     private void Update()
@@ -65,7 +64,7 @@ public class CharacterSelect : MonoBehaviour
                 SelectCharacter();
                 break;
             case 3:
-                _sceneLoader.SceneLoad(_nextSceneName);
+                _fadeInOut.SceneLoad();
                 break;
         }
     }
@@ -106,7 +105,7 @@ public class CharacterSelect : MonoBehaviour
                 }
                 break;
             case 2:
-
+                
                 if (Input.GetKeyDown(KeyCode.RightArrow))
                 {
                     _currentSelectedCharacter++;
@@ -136,6 +135,10 @@ public class CharacterSelect : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
+                    if(_currentSelectedCharacter == GameManager.Instance.PlayerOne)
+                    {
+                        return;
+                    }
                     GameManager.Instance.ChangePlayerTwoCharacter(_currentSelectedCharacter);
                     Debug.Log($"プレイヤー2 : {GameManager.Instance.PlayerTwo}");
                     _currentPlayer++;
