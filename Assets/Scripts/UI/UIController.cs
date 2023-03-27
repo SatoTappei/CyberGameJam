@@ -22,9 +22,6 @@ public class UIController : MonoBehaviour
     [SerializeField]
     private float _h;
 
-    [SerializeField]
-    private IntroPanel _introPanel;
-
     private GameManager _gameManager;
 
     private bool _isTime = false;
@@ -35,17 +32,18 @@ public class UIController : MonoBehaviour
 
     private bool _isLeft = false;
 
+    private float _testTimer = 12f;
+
     private void Start()
     {
         _gameManager = GameManager.Instance;
-
-
     }
 
     private void Update()
     {
+        _testTimer -= Time.deltaTime;
 
-        if (_introPanel.Count >= _textTime && !_isTime)
+        if (_testTimer <= _textTime && !_isTime)
         {
             _isTime = true;
             TextActive(_comments[0]);
