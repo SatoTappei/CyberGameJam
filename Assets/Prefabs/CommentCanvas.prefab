@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -321,7 +321,7 @@ MonoBehaviour:
   _effectTransform: {fileID: 0}
   _textTime: 5
   _comments:
-  - "\u4E8C\u4EBA\u3068\u3082\u9811\u5F35\u3063\u3066!!!"
+  - "\u4E8C\u4EBA\u3068\u3082\u9811\u5F35\u3063\u3066\uFF01"
   - "\u3001\u50C5\u304B\u306B\u512A\u52E2\u3067\u3059\uFF01\uFF01"
   - "\u3001\u52DD\u5229\u306F\u76EE\u524D\u3060\u305E\uFF01\uFF01"
   - "\u3001\u6700\u5F8C\u307E\u3067\u6CB9\u65AD\u306F\u3067\u304D\u306A\u3044\uFF01\uFF01"

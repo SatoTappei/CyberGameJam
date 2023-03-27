@@ -32,7 +32,7 @@ public class UIController : MonoBehaviour
 
     private bool _isLeft = false;
 
-    private float _testTimer = 12f;
+    private float _testTimer;
 
     private void Start()
     {
@@ -41,9 +41,9 @@ public class UIController : MonoBehaviour
 
     private void Update()
     {
-        _testTimer -= Time.deltaTime;
+        _testTimer += Time.deltaTime;
 
-        if (_testTimer <= _textTime && !_isTime)
+        if (_testTimer >= _textTime && !_isTime)
         {
             _isTime = true;
             TextActive(_comments[0]);
@@ -68,11 +68,12 @@ public class UIController : MonoBehaviour
         // UIをアニメーションさせながらアクティブにする
         _isTween = true;
         _textObject.SetActive(true);
-        _textObject.transform.DOMoveY(_h, 0.5f);
+        _textObject.transform.DOMoveY(_h + 0.2f, 0.5f);
         _textObject.transform.DOScale(Vector3.one, 0.5f)
-            .OnComplete(() => _textController.UICommentText(comment));
+            .OnComplete(() => _textObject.transform.DOMoveY(_h, 0.07f)
+            .OnComplete(() => _textController.UICommentText(comment)));
 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(4f);
 
         // UIをアニメーションさせながら非アクティブにする
         _textObject.transform.DOMoveY(-6, 0.5f)
@@ -127,21 +128,21 @@ public class UIController : MonoBehaviour
     {
         if(playerId == 0)
         {
-            return "106";
+            return "106選手";
         }
         else if(playerId == 1)
         {
-            return "パチ公";
+            return "パチ公選手";
         }
         else if(playerId == 2)
         {
-            return "モワイ";
+            return "モワイ選手";
         }
         else if(playerId == 3)
         {
-            return "アベマ";
+            return "アベマ選手";
         }
 
-        return "Player";
+        return "画面の向こうの君";
     }
 }
