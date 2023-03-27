@@ -11,7 +11,7 @@ public class Building109ArmBehavior : MonoBehaviour
 
     void Start()
     {
-        _borderEffect = UnityEngine.GameObject.Find("BorderEffect").transform;
+        _borderEffect = GameObject.Find("BorderEffect").transform;
     }
 
     void Update()

@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3438551756501457122, guid: 369b0d3711677a64581ed21eb5e21fbd, type: 3}
       propertyPath: m_Name
-      value: Actor_Hachiko_2P
+      value: Actor_Hachiko_2P Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3438551756501457122, guid: 369b0d3711677a64581ed21eb5e21fbd, type: 3}
       propertyPath: m_IsActive
@@ -67,6 +67,10 @@ PrefabInstance:
       propertyPath: _sprite
       value: 
       objectReference: {fileID: 2997852325507668581}
+    - target: {fileID: 3438551756501457133, guid: 369b0d3711677a64581ed21eb5e21fbd, type: 3}
+      propertyPath: _playerNum
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3438551756501457133, guid: 369b0d3711677a64581ed21eb5e21fbd, type: 3}
       propertyPath: _usePlayer2
       value: 1
