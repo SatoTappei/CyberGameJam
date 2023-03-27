@@ -22,7 +22,10 @@ public class UIController : MonoBehaviour
     [SerializeField]
     private float _h;
 
-    private float _timer;
+    [SerializeField]
+    private IntroPanel _introPanel;
+
+    private GameManager _gameManager;
 
     private bool _isTime = false;
 
@@ -32,11 +35,17 @@ public class UIController : MonoBehaviour
 
     private bool _isLeft = false;
 
+    private void Start()
+    {
+        _gameManager = GameManager.Instance;
+
+
+    }
+
     private void Update()
     {
-        _timer += Time.deltaTime;
 
-        if (_timer >= _textTime && !_isTime)
+        if (_introPanel.Count >= _textTime && !_isTime)
         {
             _isTime = true;
             TextActive(_comments[0]);
@@ -83,19 +92,58 @@ public class UIController : MonoBehaviour
     /// </summary>
     private void EffectDistance()
     {
+        int comment = Random.Range(1, _comments.Length);
         if (_effectTransform.position.x >= 3 && !_isTween && !_isRight)
         {
-            TextActive(_comments[1]);
             _isTween = true;
             _isRight = true;
             _isLeft = false;
+
+            if(comment <= 3)
+            {
+                TextActive(SelectPlayer(_gameManager.PlayerOneCharacter) + _comments[comment]);
+            }
+            else
+            {
+                TextActive(SelectPlayer(_gameManager.PlayerTwoCharacter) + _comments[comment]);
+            }
+            
         }
         else if (_effectTransform.position.x <= -3 && !_isTween && !_isLeft)
         {
-            TextActive(_comments[2]);
             _isTween = true;
             _isLeft = true;
             _isRight = false;
+
+            if (comment <= 3)
+            {
+                TextActive(SelectPlayer(_gameManager.PlayerTwoCharacter) + _comments[comment]);
+            }
+            else
+            {
+                TextActive(SelectPlayer(_gameManager.PlayerOneCharacter) + _comments[comment]);
+            }
         }
+    }
+    private string SelectPlayer(int playerId)
+    {
+        if(playerId == 0)
+        {
+            return "106";
+        }
+        else if(playerId == 1)
+        {
+            return "パチ公";
+        }
+        else if(playerId == 2)
+        {
+            return "モワイ";
+        }
+        else if(playerId == 3)
+        {
+            return "アベマ";
+        }
+
+        return "Player";
     }
 }
