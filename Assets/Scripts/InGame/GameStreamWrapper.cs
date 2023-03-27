@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,21 +9,6 @@ public class GameStreamWrapper : MonoBehaviour
     // 生成したキャラクターが死んだ時のコールバックを登録したいので保持する必要がある
     ActorBehavior _player1;
     ActorBehavior _player2;
-
-    IEnumerator Start()
-    {
-        CallBeforeCountDown(1, 4);
-        RegisterOnGameSet(i => Debug.Log(i + "勝利"));
-        yield return new WaitForSeconds(1.0f);
-        Debug.Log("3");
-        yield return new WaitForSeconds(1.0f);
-        Debug.Log("2");
-        yield return new WaitForSeconds(1.0f);
-        Debug.Log("1");
-        yield return new WaitForSeconds(1.0f);
-        Debug.Log("開始");
-        CallAfterCountDown();
-    }
 
     /// <summary>
     /// ゲーム開始時のカウントダウン後に呼ぶ
