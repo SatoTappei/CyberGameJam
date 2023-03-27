@@ -5,13 +5,22 @@ public class ActorBehavior : MonoBehaviour
 {
     [Header("敗北時に再生される演出")]
     [SerializeField] GameObject _defeatedParitcle;
-    [Header("押し負けてBorderEffectと接触した時に呼ばれる")]
-    [SerializeField] UnityEvent _onBorderEffectHit;
+    [Header("対応するプレイヤーの番号")]
+    [SerializeField] int _playerNum = 1;
 
-    void OnDisable()
+    IWeaponControl _weaponControl;
+
+    public UnityAction<int> OnBorderEffectHit;
+
+    void Awake()
     {
-        _onBorderEffectHit = null;
+        _weaponControl = GetComponent<IWeaponControl>();
     }
+
+    /// <summary>
+    /// 勝利演出は相手側の敗北時のコールバックとして登録する
+    /// </summary>
+    public void WinPerformance() => _weaponControl?.Inactive();
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,7 +29,12 @@ public class ActorBehavior : MonoBehaviour
         {
             Instantiate(_defeatedParitcle, transform.position, Quaternion.identity);
             gameObject.SetActive(false);
-            _onBorderEffectHit?.Invoke();
+            OnBorderEffectHit?.Invoke(_playerNum);
         }
+    }
+
+    void OnDestroy()
+    {
+        OnBorderEffectHit = null;
     }
 }

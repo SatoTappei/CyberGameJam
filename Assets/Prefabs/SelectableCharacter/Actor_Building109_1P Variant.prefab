@@ -51,9 +51,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8624530477460020681, guid: 1a25b5fd4c9db534aaca3766e4de4cc6, type: 3}
+      propertyPath: _playerNum
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8624530477460020682, guid: 1a25b5fd4c9db534aaca3766e4de4cc6, type: 3}
       propertyPath: m_Name
-      value: Actor_Building109_1P
+      value: Actor_Building109_1P Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a25b5fd4c9db534aaca3766e4de4cc6, type: 3}

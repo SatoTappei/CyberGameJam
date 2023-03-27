@@ -33,10 +33,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 734122627878122875, guid: bc2f82daf73adf4408b88988a726a4b9, type: 3}
       propertyPath: m_Name
-      value: Actor_AbemaKun_1P
+      value: Actor_AbemaKun_1P Variant
       objectReference: {fileID: 0}
     - target: {fileID: 734122627878122875, guid: bc2f82daf73adf4408b88988a726a4b9, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 734122627878122876, guid: bc2f82daf73adf4408b88988a726a4b9, type: 3}
+      propertyPath: _playerNum
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 734122627878122877, guid: bc2f82daf73adf4408b88988a726a4b9, type: 3}
