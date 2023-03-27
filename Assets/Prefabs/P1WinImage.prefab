@@ -25,7 +25,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4440389283800644834}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -90,11 +90,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2786886687761450072, guid: 63633d321edd80a4282c7555fc6f17fb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2786886687761450072, guid: 63633d321edd80a4282c7555fc6f17fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8423168745696687581}
     - target: {fileID: 2786886687761450072, guid: 63633d321edd80a4282c7555fc6f17fb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2786886687761450072, guid: 63633d321edd80a4282c7555fc6f17fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SceneLoad
+      objectReference: {fileID: 0}
+    - target: {fileID: 2786886687761450072, guid: 63633d321edd80a4282c7555fc6f17fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneLoader, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2786886687761450072, guid: 63633d321edd80a4282c7555fc6f17fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: TitleScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2786886687761450072, guid: 63633d321edd80a4282c7555fc6f17fb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2786886687761450074, guid: 63633d321edd80a4282c7555fc6f17fb, type: 3}
       propertyPath: m_Pivot.x
@@ -199,3 +219,20 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2786886687761450074, guid: 63633d321edd80a4282c7555fc6f17fb, type: 3}
   m_PrefabInstance: {fileID: 6305949049526699734}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8155519666384077453 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2786886687761450075, guid: 63633d321edd80a4282c7555fc6f17fb, type: 3}
+  m_PrefabInstance: {fileID: 6305949049526699734}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8423168745696687581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8155519666384077453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c28a6996b17d84396ed5a78cfd4b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
