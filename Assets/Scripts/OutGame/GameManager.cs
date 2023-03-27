@@ -8,13 +8,13 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance = default;
-    [Tooltip("プレイヤー1のキャラ情報")] int _playerOneCharacter;
-    [Tooltip("プレイヤー2のキャラ情報")] int _playerTwoCharacter;
+    [Tooltip("プレイヤー1(のキャラ情報)")] int _playerOne;
+    [Tooltip("プレイヤー2(のキャラ情報)")] int _playerTwo;
 
     [Tooltip("ゲームが開始されているかどうかのフラグ")] bool _isGameStart = false;
 
-    public int PlayerOneCharacter { get => _playerOneCharacter; set => _playerOneCharacter = value; }
-    public int PlayerTwoCharacter { get => _playerTwoCharacter; set => _playerTwoCharacter = value; }
+    public int PlayerOne { get => _playerOne; set => _playerOne = value; }
+    public int PlayerTwo { get => _playerTwo; set => _playerTwo = value; }
     public bool IsGameStart { get => _isGameStart; set => _isGameStart = value; }
 
     private void Awake()
@@ -32,12 +32,12 @@ public class GameManager : MonoBehaviour
 
     public void ChangePlayerOneCharacter(int id)
     {
-        _playerOneCharacter = id;
+        _playerOne = id;
     }
 
     public void ChangePlayerTwoCharacter(int id)
     {
-        _playerTwoCharacter = id;
+        _playerTwo = id;
     }
 
     public void ToggleGame()

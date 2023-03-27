@@ -10,7 +10,7 @@ using DG.Tweening;
 [RequireComponent(typeof(CanvasGroup))]
 public class GameResult : MonoBehaviour
 {
-    [SerializeField, Tooltip("表示させるパネル")] Image _image;
+    [SerializeField, Tooltip("表示させる画像")] Image[] _image;
     CanvasGroup _canvasGroup;
 
     private void Start()
@@ -20,10 +20,18 @@ public class GameResult : MonoBehaviour
         _canvasGroup.blocksRaycasts = false;
     }
 
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            ShowResult();
+        }
+    }
+
     public void ShowResult(float endValue = 1, float duration = 1f)
     {
         _canvasGroup.alpha = 1f;
         _canvasGroup.blocksRaycasts = true;
-        _image.DOFade(endValue, duration);      
+        _image.DOFade(endValue, duration);
     }
 }
