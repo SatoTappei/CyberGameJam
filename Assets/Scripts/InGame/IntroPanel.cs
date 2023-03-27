@@ -10,16 +10,7 @@ public class IntroPanel : MonoBehaviour
 
     [SerializeField, Tooltip("カウントダウン秒数")] float _count;
 
-    GameStreamWrapper _stream;
-
     public float Count => _count;
-
-    private void Start()
-    {
-        _stream = GetComponent<GameStreamWrapper>();
-
-        _stream.CallBeforeCountDown(GameManager.Instance.PlayerOne, GameManager.Instance.PlayerTwo);
-    }
 
     private void Update()
     {
@@ -29,9 +20,6 @@ public class IntroPanel : MonoBehaviour
         if(_count < 0)
         {
             GameManager.Instance.ToggleGame();
-
-            _stream.CallAfterCountDown();
-
             _panel.SetActive(false);
         }
     }
